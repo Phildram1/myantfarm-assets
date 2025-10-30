@@ -69,31 +69,6 @@ Those are the headline results we report in the paper.
 
 ---
 
-###Repository Layout
-myantfarm-assets/
-├─ README.md
-├─ executive-summary/
-│  ├─ Beyond_Detection_Executive_Summary.pdf
-│  └─ executive_summary.tex
-├─ paper/
-│  ├─ Beyond_Detection_Full.pdf
-│  └─ main.tex
-├─ sim/
-│  ├─ docker-compose.yml
-│  ├─ services/
-│  │  ├─ llm-backend/        # Ollama service Dockerfile, model pull script
-│  │  ├─ copilot_sa/         # FastAPI single-agent service
-│  │  ├─ multiagent/         # FastAPI multi-agent orchestrator
-│  │  ├─ evaluator/          # run.py lives here
-│  │  └─ analyzer/           # analyzer script (pandas/matplotlib)
-│  ├─ data/
-│  │  └─ incident_authregression/stream.ndjson
-│  ├─ results/               # CSV + JSON accumulates here
-│  ├─ analysis_out/          # summary text + figures
-│  └─ LICENSE.md
-└─ LICENSE
-
-
 ### 1. Clone the repo
 ```bash
 git clone https://github.com/Phildram1/myantfarm-assets.git
