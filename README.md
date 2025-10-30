@@ -14,7 +14,7 @@ Modern ops teams get alerts in seconds, but it can take minutes (or longer) to a
 - Who is impacted?
 - What do we do next?
 
-That delay is what we call **incident comprehension latency** — the time from first signal to a usable, explainable narrative a human can act on. Reducing that delay directly affects revenue, SLA penalties, and customer trust. :contentReference[oaicite:2]{index=2}
+That delay is what we call **incident comprehension latency** — the time from first signal to a usable, explainable narrative a human can act on. Reducing that delay directly affects revenue, SLA penalties, and customer trust.
 This repo provides a *reproducible simulation environment* to measure how fast different AI strategies reach “usable understanding,” and how good their recommendations are.
 
 ---
@@ -39,7 +39,7 @@ We use Docker Compose to spin up five cooperating services:
 - **analyzer**  
   A Python 3.11 container that aggregates all trial runs into CSVs, summary text, and bar charts (matplotlib).
 
-All services share a volume so results persist outside the containers (CSV, JSON, PNG). This makes the experiment deterministic and auditable. :contentReference[oaicite:4]{index=4}
+All services share a volume so results persist outside the containers (CSV, JSON, PNG). This makes the experiment deterministic and auditable.
 
 ---
 
@@ -58,7 +58,7 @@ We compare:
 - **C2:** Single-agent copilot  
 - **C3:** Multi-agent orchestrator
 
-In our 348-trial simulation (116 trials per condition), **C3 cut comprehension latency by ~58% vs the manual baseline and ~36% vs the single-agent copilot, and improved decision quality by ~48% vs baseline.** :contentReference[oaicite:5]{index=5} :contentReference[oaicite:6]{index=6}
+In our 348-trial simulation (116 trials per condition), **C3 cut comprehension latency by ~58% vs the manual baseline and ~36% vs the single-agent copilot, and improved decision quality by ~48% vs baseline.**
 
 Those are the headline results we report in the paper.
 
@@ -72,6 +72,6 @@ Those are the headline results we report in the paper.
 - Windows WSL2 or Linux / macOS terminal is fine
 - At least ~6–8 GB of disk for the quantized model pulled by Ollama
 
-> Note: All data in this repo is **synthetic**. There is no production telemetry or customer data. :contentReference[oaicite:7]{index=7}
+> Note: All data in this repo is **synthetic**. There is no production telemetry or customer data.
 
 
