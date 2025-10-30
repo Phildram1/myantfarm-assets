@@ -1,3 +1,10 @@
+## About the Project
+
+**MyAntFarm.ai** is an experimental framework for evaluating large language model (LLM) multi-agent orchestration in real-time incident comprehension. It replicates results published in:
+
+> Philip Drammeh (2025). *Beyond Detection: Evaluating LLM-Based Multi-Agent Systems for Real-Time Incident Comprehension.*  
+> [Executive Summary (PDF)](docs/EXECUTIVE_SUMMARY.pdf) | [Full Paper (PDF)](paper/Beyond_Detection.pdf)
+
 # MyAntFarm.ai — Beyond Detection
 
 **Goal:** Reduce the time between “something’s wrong” and “we know what to do.”
