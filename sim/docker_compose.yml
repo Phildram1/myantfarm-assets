@@ -1,0 +1,45 @@
+# Use something like this in sim/docker-compose.yml (simplified outline — ports and image names should reflect your local versions):
+services:
+  llm-backend:
+    build: ./services/llm-backend
+    ports:
+      - "11434:11434"
+    environment:
+      - MODEL_NAME=llama3.1:8b-instruct-q4_K_M
+    volumes:
+      - ./models:/models
+
+  copilot_sa:
+    build: ./services/copilot_sa
+    environment:
+      - OLLAMA_URL=http://llm-backend:11434
+    depends_on:
+      - llm-backend
+
+  multiagent:
+    build: ./services/multiagent
+    environment:
+      - OLLAMA_URL=http://llm-backend:11434
+    depends_on:
+      - llm-backend
+
+  evaluator:
+    build: ./services/evaluator
+    volumes:
+      - ./data:/data
+      - ./results:/results
+    depends_on:
+      - copilot_sa
+      - multiagent
+
+  analyzer:
+    build: ./services/analyzer
+    volumes:
+      - ./results:/results
+      - ./analysis_out:/analysis_out
+
+#Key points:
+#llm-backend exposes a local inference API. No external calls.
+#copilot_sa and multiagent both talk to that backend.
+#evaluator mounts /data (scenario context) and /results (outputs).
+#analyzer reads /results and writes /analysis_out.
